@@ -1,1 +1,1 @@
-web: python Flask_POC.py:app 
+web: python Flask_POC.py

@@ -13,7 +13,7 @@ import json
 import pandas as pd
 
 
-app = Flask(__name__,template_folder='templates')
+app = Flask(__name__,template_folder='Templates')
 
 file = open('./Pickle/Poc_Model_Regression_90.p', 'rb')
 Model = pickle.load(file)

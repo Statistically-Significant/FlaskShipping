@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+ <!--saved from url=(0116)file:///C:/Users/akaniyamparambil/Desktop/Babysitter%20Application%20Form_files/Babysitter%20Application%20Form.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Babysitter Application Form</title>
+    <link href="/static/css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- justify-content: center;
+      <div class="btn-block-new">
+          <button type="Generate" href="/">Randomise</button>
+        </div>
+        
+             {% if sentiment %}
+      <p>The Sentiment is : {{sentiment}}</p>
+      {% endif %}
+   align-items: center;
+
+-->
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+        
+        
+          $('#Randomise').bind('click', function(ev) {
+             ev.preventDefault();
+             ev.stopPropagation(); 
+            $.getJSON('/background_process_test',
+                function(data) {
+                console.log(data);
+                var data1=$('html').find(':input')
+                
+                $.each(data1, function( i, l ){
+                  console.log( "Values #" + i + ": " + l.name );
+                  for (var key in data) {
+                        // check if the property/key is defined in the object itself, not in parent
+                        if (data.hasOwnProperty(key)) {           
+                            if (key ==l.name){
+                            l.value =  data[key]
+                            
+                            
+                            }
+                        }
+                    }
+  
+           
+           
+           
+           
+           })         
+                    
+                                       
+                   
+                   
+                    });
+                
+                
+                
+                
+                
+              //do nothing
+              //return nothing;
+            });
+           
+ 
+   $('#Submit').bind('click', function(ev) {
+    ev.preventDefault();
+    create ();
+          
+         var checker=$('#Second').is(":visible"); 
+         console.log("Blah" +checker);
+         if (checker ==false){
+         
+                function Togglemenao(){ 
+                $("#Temp1").animate({
+                width: "toggle"
+                });
+                }
+                function Marginmenao(){
+                $(".testbox form").animate({
+                margin:"20px"
+                });}
+                 function Marginmenao2(){
+                $("#Second").animate({
+                margin:"20px"
+                });}
+                
+                
+                function Widemenao(){  
+                $(".testbox form").animate({
+                width:"30%"
+                });}
+                
+                
+               $("html, body").animate({ scrollTop: 0 }, "slow"); 
+               
+               setTimeout(Togglemenao,700)
+               setTimeout(Marginmenao,500)
+               $('#Second').slideDown()
+               setTimeout(Marginmenao2,5)  
+               setTimeout(Widemenao,200)          
+          
+          
+          }
+          else{
+          $("html, body").animate({ scrollTop: 0 }, "slow"); 
+          }
+          
+          
+          
+          })
+          })
+          
+
+          
+          
+          
+
+</script>
+
+<script>
+function create () {
+//
+var resultme="LOSE"
+$.ajax({
+url:"Predict", //the page containing python script
+type: "post", //request type,
+dataType: 'json',
+data:$("#Banishme").serialize(),
+success:function(result){
+resultme=result;
+X1="AC0" +result["X1"]["Shipment Category"];
+X2=result["X1"]["Description"];
+X3=result["X1"]["Distance"];
+X4=result["X1"]["Duration"];
+X5=result["X1"]["Tax"];
+X6=result["X1"]["Quantity"];
+X7=result["X1"]["Health"];
+X8=result["X1"]["Partial"];
+console.log(result["Pred"]);
+console.log(resultme);
+//alert(result);
+
+var new_result= result["Pred"].toLocaleString() //Math.round(result["Pred"].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+$('#Pred').val(new_result);
+$('#X1').text(X1);
+$('#X2').text(X2);
+$('#X3').text(X3);
+$('#X4').text(X4);
+$('#X5').text(X5);
+$('#X6').text(X6);
+$('#X7').text(X7);
+$('#X8').text(X8);
+
+      }
+    });
+    console.log("WhatARE YOU");
+    console.log(resultme["X1"]);
+   } 
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+
+  $("#Temp1").animate({
+    width: "toggle"
+   
+  });
+
+  $(".testbox form").animate({
+    margin:"20px"
+   
+  });
+  
+ $(".testbox form").animate({
+    width:"30%"
+   
+  });
+
+
+</script>
+
+    <style>
+    
+    
+    .Inside{
+    
+    margin-left:25px;
+    
+    }
+    
+    #Second .InsideOut{
+    margin-top:20px;
+    width:90%;
+    }
+    
+    
+    #Second .item{
+    width:100%;
+    }
+    
+    
+    .I1{
+    padding:10px;
+    margin-left:10px;
+    box-shadow: 0 0px 1px black;
+    
+    
+    }
+    
+    .I2{
+    padding:10px;
+    
+    margin-right:50px;
+    float:right;
+        font-weight: 700;
+
+    
+    }
+    
+    #Second{
+    display:none;
+    background-color:white;
+    position:relative;
+    width:60%;
+    height:510px;
+    margin-left:30px;
+    
+    border-radius:5px;
+    opacity:.9;
+    inset 1px -1px 1px 0px #2c4b96
+    
+    
+    
+    
+    }
+    
+    #Second div{
+    margin:25px;
+    display:block;
+    
+    
+    
+    
+    
+    
+    }
+    
+    #Second p:first-child{
+    color: black;
+    margin-bottom: 7px;
+    
+    font-size: 11px;
+    font-weight: 600;
+    width:90%;
+    
+    }
+    
+    #Second input{
+    
+     border: 1px solid transparent;
+      box-shadow: 0 0 8px 0 grey;
+      width:80%;
+      color: yellowgreen;
+    font-size: 11px;
+      
+    }
+    
+    
+    
+    
+    
+    .testbox #Temp1{
+    margin-left:30px;
+    position:relative;
+    width:20%;
+    height:100px;
+    
+    
+    }
+    #Wrapper{
+      position: relative;
+      
+
+
+    height:auto;
+    width:auto;
+
+ 
+    }
+    #Menu{
+    display:inline-flex;
+    padding:10px;
+    width:100%;
+    z-index:-1;
+    opacity:.9;
+       
+    
+    }
+
+ 
+    #Menu>div{
+    width:100%;
+    z-index=1;
+    background-image: url("/static/White.jpg");
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    padding-left: 500px;
+    padding-right: 500px;
+    margin-left:20px;
+    border:3px solid white;
+    padding-top:17px;
+    font-family: Roboto, Arial, sans-serif;
+    font-weight:bolder;
+    font-size: 20px;
+    color: black;
+    line-height: 22px;
+    
+  
+    
+    }
+    
+    #Menu>img{
+    position:inherit;
+    border:3px solid white;
+    background-image: url("/static/White.jpg");
+    background-repeat: repeat;
+    background-size: 300px 300px;
+
+    height:55px;
+    width:55px;
+  
+    background-repeat: repeat;
+    }
+    body{
+    background-image: url("/static/3D Lights Connecting Dots Free Wallpaper HD.jpg");
+    background-repeat: repeat;
+    
+    }
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, textarea, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 10px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1 {
+      position: absolute;
+      margin: 0;
+      font-size: 32px;
+      color: #fff;
+      z-index: 2;
+      }
+      .testbox {
+      
+      
+      #filter: sepia(1);
+      background-size: contain;
+      display: flex;
+    
+   
+      height: inherit;
+      padding: 10px;
+      }
+      form {
+       
+      width: 50%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      
+      }
+      .banner {
+      display:None;
+      position: relative;
+      height: 40px;
+      background-image: url("/uploads/media/default/0001/01/a3df023f124a8bec3b213347404fe0a7318161de.jpeg");  
+      background-size: cover;
+
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+      .banner::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.5); 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      }
+      p.top-info {
+      margin: 10px 0;
+      }
+      input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color: #8ebf42;
+      }
+      .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 8px 0 #8ebf42;
+      color: #8ebf42;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #a9a9a9;
+      }
+      .item i {
+      right: 2%;
+      top: 30px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 1%;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      input[type=radio] {
+      width: 0;
+      visibility: hidden;
+      }
+      label.radio {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 25px 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      label.radio:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #8ebf42;
+      }
+      label.radio:after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 4px;
+      top: 6px;
+      left: 5px;
+      background: transparent;
+      border: 3px solid #8ebf42;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=radio]:checked + label:after {
+      opacity: 1;
+      }
+      .btn-block-new>button {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: red;
+            background: #8cfer;
+      
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #8ebf42;
+      font-size: 12px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: #82b534;
+      }
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .city-item input {
+      width: calc(50% - 20px);
+      }
+      .city-item select {
+      width: calc(50% - 8px);
+      }
+      }
+    </style>
+  </head>
+  <body>
+  {% set cat = ["Shipment Category", "Description", 'Distance', 'Lats_1', 'Lons_1', 'Lats_2', 'Lons_2', 'Costing', 'Overheads_1', 'Overheads_2', 'Overheads_3', 'Tonnage', 'Duration', 'Port_A_Loading', 'Port_B_Loading', 'Port_C_Loading', 'Port_D_Loading', 'Port_E_Loading', 'Quantity', 'Tax', 'Health', 'Partial'] %} 
+
+    <div id="Wrapper"> 
+    <div id="Menu"> 
+    <img src="/static/New Icon.png" alt="Italian Trulli">
+    <div > SHIPPING COST PREDICTION</div>
+    </div>
+    
+    </div>
+    <div class="testbox">
+    <div id="Temp1">
+    
+    </div>
+  
+      <form id="Banishme" action="/Predict" method="post">
+        <div class="banner">
+          <h2>SHIPPING COST PREDICTION</h2>
+        </div>
+        <div class="item">
+          <p>Shipment Category</p>
+          <select name="Shipment Category">
+              <option value="">Shipment Category</option>
+              <option value="1">AC01</option>
+              <option value="2">AC02</option>
+              <option value="3">AC03</option>
+              <option value="4" selected="">AC04</option>
+              <option value="5">AC05</option>
+              <option value="6">AC06</option>
+              <option value="7">AC07</option>
+              <option value="8">AC08</option>
+              <option value="9">AC09</option>
+              <option value="10">AC010</option>
+              <option value="11">AC011</option>
+              <option value="12">AC012</option>
+              <option value="13">AC013</option>
+              <option value="14">AC014</option>
+              <option value="15">AC015</option>
+              <option value="16">AC016</option>
+              <option value="17">AC017</option>
+              <option value="18">AC018</option>
+              <option value="19">AC019</option>
+              <option value="20">AC020</option>
+            </select>
+        </div>
+        <div class="item">
+          <p>Description</p>
+          <select name={{cat[1]}}>
+              <option value="">Description</option>
+              
+     <option value="1" selected="">Category_1 Grade 1</option>
+              <option value="2">Category_1 Grade 2</option>
+              <option value="3">Category_1 Grade 3</option>
+              <option value="4">Category_2 Grade 1</option>
+              <option value="5">Category_2 Grade 2</option>
+              <option value="6">Category_2 Grade 3</option>
+              <option value="7">Category_3 Grade 1</option>
+              <option value="8">Category_3 Grade 2</option>
+              <option value="9">Category_3 Grade 3</option>
+              <option value="10">Category_4 Grade 1</option>
+              <option value="11">Category_4 Grade 2</option>
+              <option value="12">Category_4 Grade 3</option>
+              <option value="13">Category_5 Grade 1</option>
+              <option value="14">Category_5 Grade 2</option>
+              <option value="15">Category_5 Grade 3</option>
+
+            </select>
+        </div>
+        <div class="item">
+          <p>Distance</p>
+          <input type="text" name={{cat[2]}}>
+        </div>
+        <div class="item">
+          <p>Lat 1</p>
+          <input type="text" name={{cat[3]}}>
+        </div>
+        <div class="item">
+          <p>Lon 1</p>
+          <input type="text" name={{cat[4]}}>
+        </div>
+        <div class="item">
+          <p>Lat 2</p>
+          <input type="text" name={{cat[5]}}>
+        </div>
+        <div class="item">
+          <p>Lon 2</p>
+          <input type="text" name={{cat[6]}}>
+        </div>
+        
+        <div class="item">
+          <p>Costing</p>
+          <input type="text" name={{cat[7]}}>
+        </div>
+        <div class="item">
+          <p>Overheads 1</p>
+          <input type="text" name={{cat[8]}}>
+        </div>
+        <div class="item">
+          <p>Overheads 2</p>
+          <input type="text" name={{cat[9]}}>
+        </div>
+        <div class="item">
+          <p>Overheads 3</p>
+          <input type="text" name={{cat[10]}}>
+        </div>
+    <div class="item">
+          <p>Tonnage</p>
+          <input type="text" name={{cat[11]}}>
+        </div>
+    <div class="item">
+          <p>Duration</p>
+          <input type="text" name={{cat[12]}}>
+        </div>
+    <div class="item">
+          <p>Port_A_Loading</p>
+          <input type="text" name={{cat[13]}}>
+        </div>
+      <div class="item">
+          <p>Port_B_Loading</p>
+          <input type="text" name={{cat[14]}}>
+        </div>
+      <div class="item">
+          <p>Port_C_Loading</p>
+          <input type="text" name={{cat[15]}}>
+        </div>
+      <div class="item">
+          <p>Port_D_Loading</p>
+          <input type="text" name={{cat[16]}}>
+        </div>
+      <div class="item">
+          <p>Port_E_Loading</p>
+          <input type="text" name={{cat[17]}}>
+        </div>
+      <div class="item">
+          <p>Quantity</p>
+          <input type="text" name={{cat[18]}}>
+        </div>
+      <div class="item">
+          <p>Tax</p>
+          <input type="text" name={{cat[19]}}>
+        </div>
+      <div class="item">
+          <p>Health</p>
+          <input type="text" name={{cat[20]}}>
+        </div>
+        
+        <div class="item">
+          <p>Partial Shipment</p>
+          <select name={{cat[21]}}>
+              <option value="">Partial Shipment</option>
+              <option value="1">Yes</option>
+              <option value="2">No</option>
+ 
+            </select>
+        </div>
+        
+     
+        <div class="btn-block">
+          <button id="Submit" type="submit" name="submit" href="/">Submit</button>
+         
+        </div>
+        <div class="btn-block">
+         <button type="button" id="Randomise" name="Something"> Randomise</button>
+         </div>
+      </form>
+           <div id = "Second">
+           
+          <div class="item">
+          <p>PREDICTION</p>
+          <input id="Pred" type="text" readonly name="Prediction">
+          </div>
+          
+          <div class="InsideOut">
+          <span class="I1" >SHIPPING CATEGORY</span> 
+          <span id="X1" class="I2" >DETAILS</span>
+   </div>
+   
+          <div class="InsideOut">
+          <span class="I1" >DESCRIPTION</span> 
+          <span id="X2" class="I2" >WHAT EVEN IS THIS</span>   
+     </div>
+     
+     
+          <div class="InsideOut">
+          <span class="I1" >DISTANCE</span> 
+          <span id="X3" class="I2" >100</span>   
+     </div>
+              <div class="InsideOut">
+          <span class="I1" >DURATION</span> 
+          <span id="X4" class="I2" >100</span>   
+     </div>
+     
+               <div class="InsideOut">
+          <span class="I1" >QUANTITY</span> 
+          <span id="X5" class="I2" >100</span>   
+     </div>
+     
+               <div class="InsideOut">
+          <span class="I1" >TAX</span> 
+          <span id="X6" class="I2" >100</span>   
+     </div>
+     
+               <div class="InsideOut">
+          <span class="I1" >HEALTH</span> 
+          <span id="X7" class="I2" >100</span>   
+     </div>
+               <div class="InsideOut">
+          <span class="I1" >Partial</span> 
+          <span id="X8" class="I2" >YES</span>   
+     </div>
+
+ 
+  
+</body></html>

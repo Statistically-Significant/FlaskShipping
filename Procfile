@@ -1,1 +1,1 @@
-web: gunicorn Flask_POC:My_Awesome_App
+web: gunicorn Flask_POC:app
